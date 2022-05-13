@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Aluno</title>
+
+    <style>
+body{
+    font: 12pt arial;
+}
+button{
+    font-size: 12pt;
+    padding: 30px;
+}
+
+    </style>
+
+</head>
+<body>
+    <h1>Média do aluno</h1>
+    <button onclick="media()">calcular média</button>
+    <section id="situacao">
+        <p>o resultado que vai aparecer</p>
+    </section>
+<script>
+    function media(){
+        let nom = window.prompt('qual e o nome do aluno?')
+        let n1 = Number(window.prompt(`qual foi a primeira nota de ${nom}?`))
+        let n2 = Number(window.prompt(`alem de ${n1}, qual foi a outra nota de ${nom}?`))
+        med = (n1 + n2)/2
+
+        let msg
+        if (med >=6) {
+            msg = 'meus parabens!'            
+        } else {
+            msg = 'estude mais um pouco!'
+        }
+        let res = document.getElementById('situacao')
+        res.innerHTML += `<p> calculando a média final de <mark>${nom}</mark>.</p> `
+            res.innerHTML += `<p> as notas obtidas foram <mark>${med}</mark>.</p> `
+            res.innerHTML += `<p> a media final sera <mark>${med}</mark>.</p> `
+            res.innerHTML += `<p> a mensagem que temos e: <strong style='color:red '>${msg}</strong></p> `
+
+    }
+</script>
+    </button>
+    
+</body>
+</html>
